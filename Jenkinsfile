@@ -4,6 +4,7 @@ pipeline {
     environment {
         IMAGE_NAME = 'status-api'
         CONTAINER_NAME = 'status-api'
+        PATH = "/usr/local/bin:/opt/homebrew/bin:/Applications/Docker.app/Contents/Resources/bin:${env.PATH}"
     }
 
     stages {
