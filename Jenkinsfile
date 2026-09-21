@@ -24,9 +24,9 @@ pipeline {
             steps {
                 sh '''
                     docker rm -f test-$CONTAINER_NAME || true
-                    docker run -d --name test-$CONTAINER_NAME -p 3001:3000 $IMAGE_NAME:latest
+                    docker run -d --name test-$CONTAINER_NAME -p 3055:3000 $IMAGE_NAME:latest
                     sleep 5
-                    curl -f http://localhost:3001/status
+                    curl -f http://localhost:3055/status
                     docker rm -f test-$CONTAINER_NAME
                 '''
             }
